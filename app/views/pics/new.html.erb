@@ -1,0 +1,10 @@
+<h1>Upload picture</h1>
+
+<%= simple_form_for @pic, :html => {:multipart => true} do |f| %>
+    <fieldset>
+      <%= f.input :file, as: :file %>
+      <%= f.input :position, collection: Pic::CORNERS, include_blank: false %>
+      <%= f.input :alpha, collection: 0..100, include_blank: false %>
+    </fieldset>
+    <%= f.button :submit %>
+<% end %>
